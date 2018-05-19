@@ -15,3 +15,12 @@
 
 In order to carry execution process for matrix multiplication, We have used a block-wise distribution of data with master and slave pattern.
 Work is divided by the checkerboard implementation, where the matrix C which is the resultant matrix is divided into n submatrices. Here n is equal to the number of processors participating in executing the program. Each sub matrix is assigned to each node for calculation. Each nodes get their own computation values from the master. After calculation the slave nodes send their results to master node and the final resultant matrix is printed.
+
+
+#Compile : 
+
+mpicc -o objectfile executablefile.c
+
+#Run:
+
+mpirun -n numberofparallelporcessors ./objectfile
